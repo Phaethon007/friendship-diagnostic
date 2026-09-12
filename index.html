@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Friendship Debugger 💙</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ================= MUSIC ================= -->
+
+  <audio
+    id="backgroundMusic"
+    src="backsound.mp3"
+    loop
+  ></audio>
+
+  <div class="music-bar">
+    <button
+      id="musicToggle"
+      class="music-btn"
+      onclick="toggleMusic()"
+    >
+      🔇 Musik OFF
+    </button>
+  </div>
+
+
+  <main class="app">
+
+    <!-- ================================================= -->
+    <!-- SCREEN 1 : INTRO -->
+    <!-- ================================================= -->
+
+    <section
+      class="screen active"
+      id="screen1"
+    >
+
+      <div class="terminal">
+
+        <div class="terminal-top">
+
+          <div class="terminal-lights">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <b>friendship-debugger.exe</b>
+
+        </div>
+
+
+        <div class="terminal-body">
+
+          <p class="terminal-green">
+            SYSTEM BOOTING...
+          </p>
+
+          <p>
+            Loading friendship diagnostic...
+          </p>
+
+          <p>
+            Checking friendship connection...
+          </p>
+
+          <p>
+            Checking programmer behavior...
+          </p>
+
+          <p class="terminal-warning">
+            ⚠ ERROR DETECTED
+          </p>
+
+          <p>
+            One programmer made a mistake.
+          </p>
+
+          <p>
+            Responsibility detected: <b>100%</b>
+          </p>
+
+          <p>
+            Starting repair protocol...
+          </p>
+
+          <button
+            class="primary-btn"
+            onclick="startExperience()"
+          >
+            🐱 Mulai Debugging 💙
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- SCREEN 2 : REPORT -->
+    <!-- ================================================= -->
+
+    <section
+      class="screen"
+      id="screen2"
+    >
+
+      <div class="card">
+
+        <div class="cat">
+          🐱
+        </div>
+
+        <h1>
+          Friendship Diagnostic
+        </h1>
+
+        <p class="lead">
+          Ada sesuatu yang perlu diperbaiki.
+        </p>
+
+
+        <div class="report">
+
+          <p>
+            🖥️ Server:
+            <span class="online">
+              ONLINE
+            </span>
+          </p>
+
+          <p>
+            🌐 Internet:
+            <span class="online">
+              CONNECTED
+            </span>
+          </p>
+
+          <p>
+            💻 Programmer:
+            <span class="danger">
+              NEEDS SELF-REFLECTION
+            </span>
+          </p>
+
+          <p>
+            💙 Friendship:
+            <span class="warning-text">
+              NEEDS REPAIR
+            </span>
+          </p>
+
+        </div>
+
+
+        <p>
+          Kali ini programmer tidak akan mencari alasan.
+          Dia hanya mau belajar dari kesalahannya dan
+          memperbaiki cara dia bersikap.
+        </p>
+
+
+        <button
+          class="primary-btn"
+          onclick="goTo(3)"
+        >
+          Lanjut →
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- SCREEN 3 : QUIZ -->
+    <!-- ================================================= -->
+
+    <section
+      class="screen"
+      id="screen3"
+    >
+
+      <div class="card">
+
+        <div
+          id="quizProgress"
+          class="progress"
+        ></div>
+
+        <div class="cat">
+          🐱
+        </div>
+
+        <h2 id="quizQuestion">
+          Loading...
+        </h2>
+
+        <div
+          id="quizOptions"
+          class="options"
+        ></div>
+
+        <div
+          id="quizFeedback"
+          class="feedback hidden"
+        ></div>
+
+        <button
+          id="quizNext"
+          class="primary-btn hidden"
+          onclick="nextQuiz()"
+        >
+          Lanjut →
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- SCREEN 4 : RESPONSE -->
+    <!-- ================================================= -->
+
+    <section
+      class="screen"
+      id="screen4"
+    >
+
+      <div class="card">
+
+        <div class="cat">
+          🐱
+        </div>
+
+        <h2>
+          Programmer harus merespons seperti apa?
+        </h2>
+
+        <p class="lead">
+          Bayangkan seseorang sedang terluka karena
+          kesalahan programmer.
+        </p>
+
+        <div class="response-options">
+
+          <button onclick="chooseResponse(1)">
+            🫶 Dengarkan dan pahami perasaannya
+          </button>
+
+          <button onclick="chooseResponse(2)">
+            🏃 Mengejar dan memaksa dia bicara
+          </button>
+
+          <button onclick="chooseResponse(3)">
+            🧑‍💻 Mencari alasan agar programmer terlihat benar
+          </button>
+
+          <button onclick="chooseResponse(4)">
+            ⏳ Memberikan waktu sambil tetap menghargainya
+          </button>
+
+        </div>
+
+        <div
+          id="responseResult"
+          class="feedback hidden"
+        ></div>
+
+        <button
+          id="responseNext"
+          class="primary-btn hidden"
+          onclick="goTo(5)"
+        >
+          Lanjut →
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- SCREEN 5 : GIFT GAME -->
+    <!-- ================================================= -->
+
+    <section
+      class="screen"
+      id="screen5"
+    >
+
+      <div class="card">
+
+        <div class="cat">
+          🐱
+        </div>
+
+        <h2>
+          Choose A Little Gift 🎁
+        </h2>
+
+        <p>
+          Programmer ingin memberikan sesuatu
+          untuk membuat suasana sedikit lebih ringan.
+        </p>
+
+        <p class="small-note">
+          Pilih satu. Tidak ada pilihan yang salah. 💙
+        </p>
+
+
+        <div class="gift-grid">
+
+          <button
+            class="gift"
+            onclick="chooseGift('chocolate')"
+          >
+            <span>🍫</span>
+            <small>Cokelat</small>
+          </button>
+
+
+          <button
+            class="gift"
+            onclick="chooseGift('flower')"
+          >
+            <span>💐</span>
+            <small>Bunga</small>
+          </button>
+
+
+          <button
+            class="gift"
+            onclick="chooseGift('teddy')"
+          >
+            <span>🧸</span>
+            <small>Teddy Bear</small>
+          </button>
+
+
+          <button
+            class="gift"
+            onclick="chooseGift('cake')"
+          >
+            <span>🍰</span>
+            <small>Strawberry Cake</small>
+          </button>
+
+
+          <button
+            class="gift"
+            onclick="chooseGift('boba')"
+          >
+            <span>🧋</span>
+            <small>Boba</small>
+          </button>
+
+
+          <button
+            class="gift"
+            onclick="chooseGift('letter')"
+          >
+            <span>💌</span>
+            <small>Surat Kecil</small>
+          </button>
+
+        </div>
+
+
+        <div
+          id="giftResult"
+          class="feedback hidden"
+        ></div>
+
+
+        <button
+          id="giftNext"
+          class="primary-btn hidden"
+          onclick="goTo(6)"
+        >
+          Lanjut →
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- SCREEN 6 : HEART GAME -->
+    <!-- ================================================= -->
+
+    <section
+      class="screen"
+      id="screen6"
+    >
+
+      <div class="card">
+
+        <div class="cat">
+          🐱
+        </div>
+
+        <h2>
+          Catch The Hearts 💙
+        </h2>
+
+        <p>
+          Klik 3 hati yang muncul.
+        </p>
+
+        <div
+          id="heartGame"
+          class="game-area heart-area"
+        ></div>
+
+        <p id="heartStatus">
+          💙 0 / 3
+        </p>
+
+        <button
+          id="heartNext"
+          class="primary-btn hidden"
+          onclick="goTo(7)"
+        >
+          Lanjut →
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- SCREEN 7 : MYSTERY BOX -->
+    <!-- ================================================= -->
+
+    <section
+      class="screen"
+      id="screen7"
+    >
+
+      <div class="card">
+
+        <div class="cat">
+          🐱
+        </div>
+
+        <h2>
+          Mystery Boxes 🎁
+        </h2>
+
+        <p>
+          Ada satu pesan kecil tersembunyi
+          di salah satu kotak.
+        </p>
+
+        <div class="box-grid">
+
+          <button onclick="openBox(0)">
+            🎁
+            <small>BOX 01</small>
+          </button>
+
+          <button onclick="openBox(1)">
+            🎁
+            <small>BOX 02</small>
+          </button>
+
+          <button onclick="openBox(2)">
+            🎁
+            <small>BOX 03</small>
+          </button>
+
+        </div>
+
+
+        <div
+          id="boxResult"
+          class="feedback hidden"
+        ></div>
+
+
+        <button
+          id="boxNext"
+          class="primary-btn hidden"
+          onclick="goTo(8)"
+        >
+          Lanjut →
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- SCREEN 8 : SECRET MESSAGE -->
+    <!-- ================================================= -->
+
+    <section
+      class="screen"
+      id="screen8"
+    >
+
+      <div class="card secret-card">
+
+        <div class="star-big">
+          ✨
+        </div>
+
+        <h2>
+          System Found A Hidden Message
+        </h2>
+
+        <div class="secret-message">
+
+          <p>
+            “Aku tahu ini agak gombal,
+            tapi aku beneran nggak mau kehilangan
+            kamu cuma gara-gara satu kesalahan. 🥺”
+          </p>
+
+        </div>
+
+        <div class="secret-note">
+          🔐 Secret message unlocked.
+        </div>
+
+
+        <button
+          class="primary-btn"
+          onclick="goTo(9)"
+        >
+          Lanjut →
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- SCREEN 9 : STAR GAME -->
+    <!-- ================================================= -->
+
+    <section
+      class="screen"
+      id="screen9"
+    >
+
+      <div class="card">
+
+        <div class="cat">
+          🐱
+        </div>
+
+        <h2>
+          Find 5 Stars ⭐
+        </h2>
+
+        <p>
+          Klik semua bintang yang muncul.
+        </p>
+
+        <div
+          id="starGame"
+          class="game-area star-area"
+        ></div>
+
+        <p id="starStatus">
+          ⭐ 0 / 5
+        </p>
+
+        <button
+          id="starNext"
+          class="primary-btn hidden"
+          onclick="goTo(10)"
+        >
+          Lanjut →
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- SCREEN 10 : MEMORY -->
+    <!-- ================================================= -->
+
+    <section
+      class="screen"
+      id="screen10"
+    >
+
+      <div class="card">
+
+        <div class="cat">
+          🐱
+        </div>
+
+        <h2>
+          Memory Match 🧠
+        </h2>
+
+        <p>
+          Cari semua pasangan yang sama.
+        </p>
+
+        <div
+          id="memoryGame"
+          class="memory-grid"
+        ></div>
+
+        <p id="memoryStatus">
+          Pasangan: 0 / 4
+        </p>
+
+        <button
+          id="memoryNext"
+          class="primary-btn hidden"
+          onclick="goTo(11)"
+        >
+          Lanjut →
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- SCREEN 11 : SENTENCE -->
+    <!-- ================================================= -->
+
+    <section
+      class="screen"
+      id="screen11"
+    >
+
+      <div class="card">
+
+        <div class="cat">
+          🐱
+        </div>
+
+        <h2>
+          Arrange The Message 💌
+        </h2>
+
+        <p>
+          Susun kata-kata ini menjadi
+          kalimat yang benar.
+        </p>
+
+        <div
+          id="sentenceWords"
+          class="sentence-words"
+        ></div>
+
+        <div
+          id="sentenceAnswer"
+          class="sentence-answer"
+        ></div>
+
+        <div
+          id="sentenceResult"
+          class="feedback hidden"
+        ></div>
+
+        <button
+          id="sentenceNext"
+          class="primary-btn hidden"
+          onclick="goTo(12)"
+        >
+          Lanjut →
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- SCREEN 12 : DEBUG -->
+    <!-- ================================================= -->
+
+    <section
+      class="screen"
+      id="screen12"
+    >
+
+      <div class="card">
+
+        <div class="cat">
+          🐱
+        </div>
+
+        <h2>
+          Debug Programmer Behavior 🧑‍💻
+        </h2>
+
+        <p>
+          Mana perilaku yang perlu diperbaiki programmer?
+        </p>
+
+        <div class="debug-options">
+
+          <button
+            onclick="debugChoice(true, this)"
+          >
+            💙 Mengakui kesalahan
+          </button>
+
+          <button
+            onclick="debugChoice(false, this)"
+          >
+            🛑 Menyalahkan perasaan orang lain
+          </button>
+
+          <button
+            onclick="debugChoice(true, this)"
+          >
+            ⏳ Memberikan waktu
+          </button>
+
+          <button
+            onclick="debugChoice(false, this)"
+          >
+            ❌ Memaksa seseorang segera memaafkan
+          </button>
+
+        </div>
+
+
+        <div
+          id="debugResult"
+          class="feedback hidden"
+        ></div>
+
+
+        <button
+          id="debugNext"
+          class="primary-btn hidden"
+          onclick="goTo(13)"
+        >
+          Lanjut →
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- SCREEN 13 : FIND CAT -->
+    <!-- ================================================= -->
+
+    <section
+      class="screen"
+      id="screen13"
+    >
+
+      <div class="card">
+
+        <div class="cat">
+          🐱
+        </div>
+
+        <h2>
+          Find The Cat 🐾
+        </h2>
+
+        <p>
+          Kucingnya memilih tempat yang nyaman.
+          Pelan-pelan saja.
+        </p>
+
+        <div
+          id="catDoors"
+          class="door-grid"
+        >
+
+          <button onclick="findCat(0)">
+            🚪
+            <small>ROOM A</small>
+          </button>
+
+          <button onclick="findCat(1)">
+            🚪
+            <small>ROOM B</small>
+          </button>
+
+          <button onclick="findCat(2)">
+            🚪
+            <small>ROOM C</small>
+          </button>
+
+          <button onclick="findCat(3)">
+            🚪
+            <small>ROOM D</small>
+          </button>
+
+        </div>
+
+
+        <div
+          id="catResult"
+          class="feedback hidden"
+        ></div>
+
+
+        <button
+          id="catNext"
+          class="primary-btn hidden"
+          onclick="goTo(14)"
+        >
+          Lanjut →
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- SCREEN 14 : TRUST -->
+    <!-- ================================================= -->
+
+    <section
+      class="screen"
+      id="screen14"
+    >
+
+      <div class="card">
+
+        <div class="cat">
+          🐱
+        </div>
+
+        <h2>
+          Repair Trust 💙
+        </h2>
+
+        <p>
+          Kepercayaan tidak diperbaiki dengan
+          satu klik.
+        </p>
+
+        <div class="trust-track">
+
+          <div id="trustBar"></div>
+
+        </div>
+
+        <p id="trustText">
+          0%
+        </p>
+
+
+        <button
+          class="primary-btn"
+          onclick="repairTrust()"
+        >
+          🔧 Perbaiki perlahan
+        </button>
+
+
+        <div
+          id="trustResult"
+          class="feedback hidden"
+        ></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- SCREEN 15 : PATIENCE -->
+    <!-- ================================================= -->
+
+    <section
+      class="screen"
+      id="screen15"
+    >
+
+      <div class="card">
+
+        <div class="cat">
+          🐱
+        </div>
+
+        <h2>
+          Patience Protocol ⏳
+        </h2>
+
+        <p>
+          Tidak semua hal harus selesai hari ini.
+        </p>
+
+        <p>
+          Tekan tombol hanya ketika kamu siap.
+        </p>
+
+
+        <button
+          id="patienceBtn"
+          class="primary-btn"
+          onclick="patience()"
+        >
+          🫶 Aku mengerti
+        </button>
+
+
+        <div
+          id="patienceResult"
+          class="feedback hidden"
+        ></div>
+
+
+        <button
+          id="patienceNext"
+          class="primary-btn hidden"
+          onclick="goTo(16)"
+        >
+          Lanjut →
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- SCREEN 16 : PERSONAL MESSAGE -->
+    <!-- ================================================= -->
+
+    <section
+      class="screen"
+      id="screen16"
+    >
+
+      <div class="card letter-card">
+
+        <div class="envelope">
+          💌
+        </div>
+
+        <h2>
+          Pesan dari Programmer 💙
+        </h2>
+
+
+        <p>
+          Ra, aku mau minta maaf ya soal kemarin.
+          Ucapanku emang kelewat kasar dan bikin kamu
+          sakit hati. Aku sadar itu murni salahku
+          dan aku nyesel banget.
+        </p>
+
+
+        <p>
+          Jujur aku sedih lhoo pas tau semua akunku
+          kamu unfollow, tapi aku paham banget kalau
+          kamu butuh waktu dan belum mau ngobrol dulu.
+          Makanya aku bikin mini game sederhana ini
+          buat kamu—mungkin gak seberapa,
+          <i>
+            but even so, I made all of this just for you—
+            no one else.
+          </i>
+        </p>
+
+
+        <p>
+          Aku nggak berharap kamu langsung melupakan
+          semuanya. Aku cuma ingin kamu tahu kalau
+          aku benar-benar sadar bahwa aku salah.
+        </p>
+
+
+        <p class="special-message">
+          Nanti kalo udah jago, aku bikinin game lagi
+          yang jauh lebih bagus buat kamu.
+          Atau mungkin kita bisa bikin bareng juga,
+          boleh banget itu. 😄
+        </p>
+
+
+        <button
+          class="primary-btn"
+          onclick="goTo(17)"
+        >
+          Lanjut 💙
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- SCREEN 17 : CONNECTION -->
+    <!-- ================================================= -->
+
+    <section
+      class="screen"
+      id="screen17"
+    >
+
+      <div class="card connection-card">
+
+        <div class="connection-icon">
+          💙
+        </div>
+
+        <h1>
+          Connection Restored
+        </h1>
+
+
+        <p>
+          Kamu akhirnya kembali mendekat.
+        </p>
+
+
+        <p>
+          Programmer tersenyum.
+        </p>
+
+
+        <div class="error-box">
+
+          ERROR 404 — Reason:
+          <br><br>
+
+          Programmer can't stop smiling
+          when you smile.
+
+          <br><br>
+
+          Status: NOT FIXED
+
+        </div>
+
+
+        <p class="gombal">
+
+          🧑‍💻 “Kayaknya bug yang satu ini...”
+
+          <br>
+
+          “...nggak perlu diperbaiki.” 😭💙
+
+        </p>
+
+
+        <div class="final-gombal">
+
+          Kamu itu cantik,
+          apalagi kalau lagi tersenyum.
+
+          <br><br>
+
+          Jadi kalau nanti senyum itu sudah kembali,
+          izinkan aku menjaganya sebisa mungkin—
+
+          <br><br>
+
+          bukan dengan kata-kata besar,
+          tapi dengan belajar untuk nggak mengulang
+          kesalahan yang sama. 💙
+
+        </div>
+
+
+        <button
+          class="primary-btn"
+          onclick="goTo(18)"
+        >
+          Lihat reaksi programmer →
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- SCREEN 18 : REACTION -->
+    <!-- ================================================= -->
+
+    <section
+      class="screen"
+      id="screen18"
+    >
+
+      <div class="card">
+
+        <div class="cat">
+          🐱
+        </div>
+
+        <h2>
+          Satu pertanyaan terakhir...
+        </h2>
+
+        <p>
+          Setelah semua ini, kamu boleh memilih
+          respons apa pun.
+        </p>
+
+        <p>
+          Programmer akan menghargainya.
+        </p>
+
+
+        <div class="reaction-grid">
+
+          <button
+            onclick="finalReaction('still-angry')"
+          >
+            😾 Aku masih gak mau ngomong sama kamu
+          </button>
+
+
+          <button
+            onclick="finalReaction('need-time')"
+          >
+            🥺 Aku masih butuh waktu
+          </button>
+
+
+          <button
+            onclick="finalReaction('less-angry')"
+          >
+            🙂 Aku udah agak gak marah
+          </button>
+
+
+          <button
+            onclick="finalReaction('talk')"
+          >
+            💬 Yaudah, nanti kita ngobrol
+          </button>
+
+
+          <button
+            onclick="finalReaction('forgive')"
+          >
+            🥹 Aku maafin
+          </button>
+
+        </div>
+
+
+        <div
+          id="reactionResult"
+          class="feedback hidden"
+        ></div>
+
+
+        <button
+          id="reactionNext"
+          class="primary-btn hidden"
+          onclick="goTo(19)"
+        >
+          Tinggalkan pesan 💌
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- SCREEN 19 : FINAL MESSAGE -->
+    <!-- ================================================= -->
+
+    <section
+      class="screen"
+      id="screen19"
+    >
+
+      <div class="card final-card">
+
+        <div class="cat">
+          🐱💙
+        </div>
+
+        <h2>
+          Leave A Message 💌
+        </h2>
+
+        <p class="lead">
+          Kalau kamu mau, tinggalkan satu pesan kecil
+          di sini.
+        </p>
+
+
+        <textarea
+          id="visitorMessage"
+          maxlength="1000"
+          placeholder="Tulis apa pun yang ingin kamu sampaikan..."
+        ></textarea>
+
+
+        <div class="char-count">
+          Maksimal 1000 karakter.
+        </div>
+
+
+        <button
+          class="primary-btn"
+          onclick="sendMessage()"
+        >
+          💌 Kirim pesan
+        </button>
+
+
+        <div
+          id="sendResult"
+          class="feedback hidden"
+        ></div>
+
+
+        <button
+          class="secondary-btn"
+          onclick="finishExperience()"
+        >
+          Lewati →
+        </button>
+
+
+        <div class="end-note">
+
+          <p>
+            Terima kasih sudah memainkan game kecil ini. 💙
+          </p>
+
+          <p>
+            Semoga hari kamu sedikit lebih ringan
+            setelah sampai di sini. 🐱✨
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <div
+    id="toast"
+    class="toast"
+  ></div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
